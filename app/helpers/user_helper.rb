@@ -1,4 +1,4 @@
-module UsersHelper
+module UserHelper
     def friends
         friends_array = friendships.map do |friendship| 
             if friendship.confirmed
@@ -11,7 +11,7 @@ module UsersHelper
 
     # Users who have yet to confirme friend requests
   def pending_friends
-    friendships.map{|friendship| friendship.friend if !friendship.confirmed}.compact
+    pending_friends = friendships.map{|friendship| friendship.friend if !friendship.confirmed}.compact
   end
 
   # Users who have requested to be friends
