@@ -9,4 +9,8 @@ class FriendshipsController < ApplicationController
         redirect_to users_path, notice: 'Friend Request Not Sent'
       end
     end
+
+    def show
+       
+    end
 end

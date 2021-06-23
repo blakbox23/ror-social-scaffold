@@ -1,10 +1,50 @@
 <section class="user-section">
   <h2><%= "Name: #{@user.name}" %></h2>
    <%= link_to '+ Add Friend', {:controller => "friendships", :action => "create", :friend_id => @user.id}, :method => :post  %>
+ 
   <article class="timeline">
     <h3>Recent posts:</h3>
     <ul class="posts">
       <%= render @posts %>
     </ul>
   </article>
+
+
+   <h5> My Friend</h5>
+ <ul>
+  <% @user.friends.each do |user| %>
+    <li>
+    <%= user.gravatar_url %> <%= user.name %>  
+    <span class="profile-link">
+    <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
+  </span>   
+    </li>
+  <% end %>
+</ul><br><br>
+
+ <h5> Users who have requested to be friends</h5>
+ <ul>
+  <% @user.friend_requests.each do |user| %>
+    <li>
+    <%= user.gravatar_url %> <%= user.name %>
+    <span class="profile-link">
+    <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
+  </span>     
+    </li>
+  <% end %>
+</ul><br><br><br>
+
+ <h5> Users who have yet to confirme friend requests</h5>
+ <ul>
+  <% @user.pending_friends.each do |user| %>
+    <li>
+    <%= user.gravatar_url %> <%= user.name %>  
+    <span class="profile-link">
+    <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
+  </span>   
+    </li>
+  <% end %>
+</ul>
+
+
 </section>
