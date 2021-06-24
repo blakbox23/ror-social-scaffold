@@ -2,19 +2,7 @@
   Name: <%= user.name %>
   <span class="profile-link">
     <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
-    
-    <%if !(current_user == user)%>
-      <%=link_to '+ Add Friend', {:controller => "friendships", :action => "create", :friend_id => user.id}, :method => :post %> 
-      <%= link_to 'confirm',{:controller => "friendships", :action => "update", :id => user.id}, :method => :patch %>
-      <%= link_to 'Reject',{:controller => "friendships", :action => "destroy", :id => user.id}, :method => :delete%>
-   <% end %>
-
-   
-
-
- 
-
-   
+    <%= check(user) %>
 
   </span>
 </li>
