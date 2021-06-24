@@ -24,8 +24,11 @@ class FriendshipsController < ApplicationController
 
   def destroy
     friend = User.find(params[:id])
-    if current_user.inverse_friendships.find do |friendship| 
+    arm=current_user.inverse_friendships + current_user.friendships
+    if arm.find do |friendship| 
       if friendship.user == friend
+      friendship.destroy
+      elsif friendship.friend == friend
       friendship.destroy
       end
     end
@@ -33,14 +36,5 @@ class FriendshipsController < ApplicationController
   redirect_to users_path, notice: 'Request rejected'
   end
 
-  def unfriend
-    friend = User.find(params[:id])
-    if current_user.friends.find do |unfriend| 
-      if unfriend.user == friend
-      unfriend.destroy
-      end
-    end
-  end
-  redirect_to users_path, notice: 'Friend Deleted'
- end 
+  
 end
