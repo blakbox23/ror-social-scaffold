@@ -33,4 +33,14 @@ class FriendshipsController < ApplicationController
   redirect_to users_path, notice: 'Request rejected'
   end
 
+  def unfriend
+    friend = User.find(params[:id])
+    if current_user.friends.find do |unfriend| 
+      if unfriend.user == friend
+      unfriend.destroy
+      end
+    end
+  end
+  redirect_to users_path, notice: 'Friend Deleted'
+ end 
 end
