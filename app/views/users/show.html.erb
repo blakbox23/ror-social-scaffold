@@ -1,9 +1,6 @@
 <section class="user-section">
   <h2><%= "Name: #{@user.name}" %></h2>
-   <%= link_to '+ Add Friend', {:controller => "friendships", :action => "create", :friend_id => @user.id}, :method => :post  %>
-  <%= link_to 'confirm',{:controller => "friendships", :action => "update"}, :method => :patch %>
-  <%= link_to 'Reject',{:controller => "friendships", :action => "destroy"}, :method => :delete%>
-  <%= link_to 'Delete',{:controller => "friendships", :action => "destroy"}, :method => :delete%>
+
   <article class="timeline">
     <h3>Recent posts:</h3>
     <ul class="posts">

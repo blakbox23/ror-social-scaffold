@@ -36,5 +36,4 @@ class FriendshipsController < ApplicationController
   redirect_to users_path, notice: 'Request rejected'
   end
 
-  
 end
