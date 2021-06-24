@@ -19,8 +19,18 @@ class FriendshipsController < ApplicationController
         end
       end     
     end
-    redirect_to users_path, notice: 'Friend c0nfirm'
+    redirect_to users_path, notice: 'Friend cofirm'
   end
 
-  
+  def destroy
+    friend = User.find(params[:id])
+    if current_user.inverse_friendships.find do |friendship| 
+      if friendship.user == friend
+      friendship.destroy
+      end
+    end
+  end
+  redirect_to users_path, notice: 'Request rejected'
+  end
+
 end
