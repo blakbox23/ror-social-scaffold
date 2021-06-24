@@ -16,7 +16,7 @@ class FriendshipsController < ApplicationController
       if friendship.user == confirming
         friendship.confirmed = true
         friendship.save
-      end  
+      end
     end
     redirect_to users_path, notice: 'Friend cofirm'
   end
@@ -25,11 +25,7 @@ class FriendshipsController < ApplicationController
     friend = User.find(params[:id])
     arm = current_user.inverse_friendships + current_user.friendships
     arm.find do |friendship|
-      if friendship.user == friend
-        friendship.destroy
-      elsif friendship.friend == friend
-        friendship.destroy
-      end
+      friendship.destroy if friendship.user == friend || friendship.friend == friend
     end
     redirect_to users_path, notice: 'Request rejected'
   end

@@ -1,11 +1,4 @@
 module UserHelper
-  #    def self_check(user)
-  #     if !(current_user == user)
-  #         #link_to('+ Add Friend', {:controller => "friendships", :action => "create", :friend_id => user.id}, method: :post ) +
-  #         #link_to('confirm',{:controller => "friendships", :action => "update", :id => user.id}, method: :patch ) +
-  #         #link_to('Reject',{:controller => "friendships", :action => "destroy", :id => user.id}, method: :delete)
-  #      end
-  #    end
   def check(user)
     if current_user != user
       if current_user.friends.include?(user)
@@ -21,6 +14,7 @@ module UserHelper
         link_to('+ Add Friend', { controller: 'friendships', action: 'create', friend_id: user.id },
                 method: :post)
       end
+
     end
   end
 end
