@@ -10,7 +10,17 @@ class FriendshipsController < ApplicationController
       end
     end
 
-    def show
-       
+    def update
+      confirming= User.find(params[:id])
+      if current_user.inverse_friendships.find do |friendship| 
+        if friendship.user == confirming
+          friendship.confirmed = true
+          friendship.save
+        end
+      end     
     end
+    redirect_to users_path, notice: 'Friend c0nfirm'
+  end
+
+  
 end
