@@ -33,6 +33,6 @@ class User < ApplicationRecord
   end
 
   def timeline_display
-    Post.where(user: (friends)<<self)
+    Post.where(user: (friends) << self)
   end
 end
