@@ -31,4 +31,8 @@ class User < ApplicationRecord
   def friend?(user)
     friends.include?(user)
   end
+
+  def timeline_display
+    Post.where(user: (friends) << self)
+  end
 end
