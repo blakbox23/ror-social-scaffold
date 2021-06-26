@@ -9,7 +9,7 @@
     </ul>
   </article>
 
-
+<% if (current_user==@user)%>
    <h5> My Friend</h5>
  <ul>
   <% @user.friends.each do |user| %>
@@ -44,7 +44,7 @@
   </span>   
     </li>
   <% end %>
-</ul>
-
+ </ul>
+<% end %>
 
 </section>
