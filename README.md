@@ -1,10 +1,10 @@
-# Scaffold for social media app with Ruby on Rails
+# Social media app with Ruby on Rails
 
-> This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
+> This project is a social media app with basic styling. Here we are creating friendship like Facebook. Users can confirm, Ignore and delete the friend request of any other user. Users can also post here. Meanwhile, he can also comment and like/dislike the post of another user.
 
 ## Built With
 
-- Ruby v2.7.0
+- Ruby v2.7.3
 - Ruby on Rails v5.2.4
 
 ## Live Demo
@@ -14,11 +14,9 @@ TBA
 
 ## Getting Started
 
-To get a local copy up and running follow these simple example steps.
-
 ### Prerequisites
 
-Ruby: 2.6.3
+Ruby: 2.7.3
 Rails: 5.2.3
 Postgres: >=9.5
 
@@ -66,8 +64,11 @@ Open `http://localhost:3000/` in your browser.
 > Tests will be added by Microverse students. There are no tests for initial features in order to make sure that students write all tests from scratch.
 
 ### Deployment
+> This is deployed on Heroku .
 
-TBA
+```
+    rpsec --format documentation
+```
 
 ## Authors
 
