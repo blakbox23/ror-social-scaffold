@@ -1,6 +1,6 @@
 # Social media app with Ruby on Rails
 
-> This project is a social media app with basic styling. Here we are creating friendship like Facebook. Users can confirm, Ignore and delete the friend request of any other user. Users can also post here. Meanwhile, he can also comment and like/dislike the post of another user.
+> This project is a social media app with basic styling. Here we are creating a friendship structure similar to Facebook's. Users can confirm, Ignore and delete friend requests from other users. Users can also post here, in addition to commenting, liking, and disliking friends' posts.
 
 ## Built With
 
@@ -9,7 +9,7 @@
 
 ## Live Demo
 
-TBA
+[Live link](https://limitless-basin-73815.herokuapp.com/)
 
 
 ## Getting Started
@@ -61,14 +61,10 @@ Open `http://localhost:3000/` in your browser.
     rpsec --format documentation
 ```
 
-> Tests will be added by Microverse students. There are no tests for initial features in order to make sure that students write all tests from scratch.
-
 ### Deployment
-> This is deployed on Heroku .
 
-```
-    rpsec --format documentation
-```
+> This is project is deployed [here](https://limitless-basin-73815.herokuapp.com/) on Heroku.
+
 
 ## Authors
 
@@ -86,7 +82,6 @@ Open `http://localhost:3000/` in your browser.
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](issues/).
 
 ## Show your support
 
@@ -94,9 +89,5 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-TBA
-
-## 📝 License
-
-TBA
+We'd like to acknowledge the Microvere community for the support to complete this project.
 
